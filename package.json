@@ -1,0 +1,28 @@
+{
+  "name": "project-wanderlust",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "nodemon --watch server/src --ext ts --exec ts-node server/src/app.ts",
+    "start:client": "cd client && npm start",
+    "start:both": "nodemon --watch server/src --ext ts --exec ts-node server/src/app.ts & cd client && npm start",
+    "start:seed": "ts-node prisma/seedDatabase.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "./client",
+    "./server"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.8.2",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}
